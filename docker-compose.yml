@@ -19,7 +19,7 @@ services:
            retries: 10
     restart: always
   backendserver:
-    build: back_SpringBoot\Dockerfile
+    build: back_SpringBoot/Dockerfile
     ports:
            - "8080"
     links:
@@ -28,7 +28,7 @@ services:
            - "db"
     restart: always
   frontend:
-    build: front_Angular\Dockerfile
+    build: front_Angular/Dockerfile
     links:
            - "backendserver"
     depends_on:
