@@ -17,4 +17,4 @@ FROM openjdk:17-alpine
 
 WORKDIR /opt/demo
 
-COPY --from=build /opt/demo/target/demo.jar /opt/demo
+COPY --from=build /opt/demo/target/*.jar /opt/demo

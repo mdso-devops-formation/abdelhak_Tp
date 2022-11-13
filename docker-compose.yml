@@ -9,7 +9,7 @@ services:
            - MYSQL_ROOT_PASSWORD=root
            - MYSQL_DATABASE=employeemanager
            - MYSQL_USER=root
-           - MYSQL_PASSWORD=root
+           - MYSQL_PASSWORD=Password123#@!
            - MYSQL_ROOT_HOST=%
     volumes:
            - ./my-datavolume:/var/lib/mysql
@@ -19,7 +19,7 @@ services:
            retries: 10
     restart: always
   backendserver:
-    build: back_SpringBoot/Dockerfile
+    build: ./back_SpringBoot
     ports:
            - "8080"
     links:
@@ -28,7 +28,7 @@ services:
            - "db"
     restart: always
   frontend:
-    build: front_Angular/Dockerfile
+    build: ./front_Angular
     links:
            - "backendserver"
     depends_on:
